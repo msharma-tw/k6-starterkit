@@ -4,15 +4,12 @@
   "description": "",
   "main": "details.spec.js",
   "scripts": {
-    "test": "k6 run --out json=reports/test-run.json test/details.spec.js"
+    "test": "k6 run -e USERNAME=msharma -e PASSWORD=Test135@ --out json=reports/test-run.json tests/login.spec.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "k6": "0.0.0"
-  },
-  "dependencies": {
-    "mocha": "^8.3.2"
   }
 }

@@ -3,10 +3,12 @@ import { check } from 'k6';
 
 export default function () {
   var url = 'https://test-api.k6.io/auth/token/login/';
+
   var payload = JSON.stringify({
-    username: 'msharma',
-    password: 'Test135@',
+    username: `${__ENV.USERNAME}`,
+    password: `${__ENV.PASSWORD}`,
   });
+
   var params = {
     headers: {
       'Content-Type': 'application/json',
@@ -14,7 +16,10 @@ export default function () {
   };
 
   const res = http.post(url, payload, params);
+  
   const result = check(res, {
     'status is 200': (r) => r.status == 200,
   });
 }
+
+
