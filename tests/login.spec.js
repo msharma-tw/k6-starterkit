@@ -6,7 +6,7 @@ export default function () {
 
   var payload = JSON.stringify({
     username: `${__ENV.USERNAME}`,
-    password: `${__ENV.PASSWORD}`,
+    password: `${__ENV.PASSWORD}`
   });
 
   var params = {
